@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://localhost:5000/api';
+const API_BASE_URL = 'https://api.abdulahad.run.place/api';
 
 const request = async (url: string, options: RequestInit = {}) => {
   try {
