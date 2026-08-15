@@ -1,0 +1,108 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model AdminUser {
+  id           String   @id @default(uuid())
+  username     String   @unique
+  email        String   @unique
+  passwordHash String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model HeroContent {
+  id        String   @id @default(uuid())
+  pretitle  String   @default("Hello World")
+  name      String   @default("Abdul Ahad")
+  title     String   @default("Full-Stack Developer")
+  tagline   String   @db.Text
+  resumeUrl String   @default("")
+  updatedAt DateTime @updatedAt
+}
+
+model AboutContent {
+  id              String   @id @default(uuid())
+  pretitle        String   @default("About Me")
+  title           String   @default("Building High-Performance Full-Stack & 3D Web Apps")
+  bio             String   @db.Text
+  attentionGetter String   @db.Text
+  photoUrl        String   @default("")
+  experienceYears Int      @default(3)
+  projectsCompleted Int    @default(25)
+  satisfiedClients Int     @default(15)
+  updatedAt       DateTime @updatedAt
+}
+
+model Skill {
+  id           String   @id @default(uuid())
+  name         String
+  category     String   @default("Frontend") // Frontend, Backend, Database, Mobile, Tools
+  proficiency  Int      @default(90) // 1-100
+  icon         String   @default("code")
+  displayOrder Int      @default(0)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Project {
+  id           String   @id @default(uuid())
+  title        String
+  category     String   @default("Full Stack")
+  description  String   @db.Text
+  techStack    String   @db.Text // Comma separated or JSON string
+  imageUrl     String   @default("")
+  liveUrl      String   @default("")
+  githubUrl    String   @default("")
+  featured     Boolean  @default(false)
+  displayOrder Int      @default(0)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Experience {
+  id                     String   @id @default(uuid())
+  type                   String   @default("JOB") // JOB or EDUCATION
+  companyOrInstitution   String
+  roleOrDegree           String
+  timeframe              String
+  description            String   @db.Text
+  displayOrder           Int      @default(0)
+  createdAt              DateTime @default(now())
+  updatedAt              DateTime @updatedAt
+}
+
+model Testimonial {
+  id           String   @id @default(uuid())
+  authorName   String
+  authorRole   String
+  company      String   @default("")
+  text         String   @db.Text
+  avatarUrl    String   @default("")
+  displayOrder Int      @default(0)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model ContactMessage {
+  id        String   @id @default(uuid())
+  name      String
+  email     String
+  subject   String   @default("")
+  message   String   @db.Text
+  isRead    Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
+
+model SocialLink {
+  id           String   @id @default(uuid())
+  platform     String
+  url          String
+  icon         String   @default("globe")
+  displayOrder Int      @default(0)
+}

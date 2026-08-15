@@ -1,0 +1,86 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    './index.html',
+    './src/**/*.{js,ts,jsx,tsx}',
+  ],
+  darkMode: 'class',
+  theme: {
+    extend: {
+      fontFamily: {
+        outfit: ['Outfit', 'sans-serif'],
+      },
+      fontSize: {
+        'theme-xs': ['12px', '18px'],
+        'theme-sm': ['14px', '20px'],
+        'theme-base': ['16px', '24px'],
+        'theme-xl': ['20px', '28px'],
+        'title-2xl': ['72px', '90px'],
+        'title-xl': ['60px', '72px'],
+        'title-lg': ['48px', '60px'],
+        'title-md': ['36px', '44px'],
+        'title-sm': ['28px', '34px'],
+      },
+      boxShadow: {
+        'theme-2xs': '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
+        'theme-xs': '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
+        'theme-sm': '0 1px 3px 0 rgba(0, 0, 0, 0.1)',
+        'theme-md': '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
+        'theme-lg': '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
+        'theme-xl': '0 20px 25px -5px rgba(0, 0, 0, 0.1)',
+        'datepicker': '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
+        'tooltip': '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
+        'modal': '0 20px 25px -5px rgba(0, 0, 0, 0.1)',
+        'card': '0 1px 3px 0 rgba(0, 0, 0, 0.1)',
+        'slider-navigation': '0 1px 3px 0 rgba(0, 0, 0, 0.1)',
+        'switcher': '0 1px 3px 0 rgba(0, 0, 0, 0.1)',
+      },
+      zIndex: {
+        '1': '1',
+        '9': '9',
+        '99': '99',
+        '999': '999',
+        '9999': '9999',
+      },
+      colors: {
+        brand: {
+          50: '#ecfeff',
+          100: '#cffafe',
+          200: '#a5f3fc',
+          300: '#67e8f9',
+          400: '#22d3ee',
+          500: '#06b6d4',
+          600: '#0891b2',
+          700: '#0e7490',
+          800: '#155e75',
+          900: '#164e63',
+        },
+        success: {
+          50: '#f0fdf4',
+          100: '#dcfce7',
+          500: '#22c55e',
+          600: '#16a34a',
+        },
+        warning: {
+          50: '#fffbeb',
+          100: '#fef3c7',
+          500: '#f59e0b',
+          600: '#d97706',
+        },
+        error: {
+          50: '#fef2f2',
+          100: '#fee2e2',
+          500: '#ef4444',
+          600: '#dc2626',
+        },
+        admin: {
+          dark: '#0f172a',
+          card: '#1e293b',
+          border: '#334155',
+          accent: '#06b6d4',
+        },
+      },
+    },
+  },
+  plugins: [],
+};
