@@ -1,6 +1,5 @@
 # Dashboard Admin Panel Git Ignore
 node_modules/
-dist/
 .env
 .env.local
 .env.*.local
